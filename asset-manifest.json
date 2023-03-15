@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/scratch-card-app/static/css/main.c3b62ad6.css",
+    "main.js": "/scratch-card-app/static/js/main.cb686243.js",
+    "static/js/787.ea9ae4e3.chunk.js": "/scratch-card-app/static/js/787.ea9ae4e3.chunk.js",
+    "static/media/ckeditor-63b3e68ce1a15.jpg": "/scratch-card-app/static/media/ckeditor-63b3e68ce1a15.b601dbc6aa225f84d258.jpg",
+    "static/media/788debc0-7525-11ed-bfcf-a89c3ac8d01f.jpeg": "/scratch-card-app/static/media/788debc0-7525-11ed-bfcf-a89c3ac8d01f.33e238acfd1c49511b92.jpeg",
+    "index.html": "/scratch-card-app/index.html",
+    "main.c3b62ad6.css.map": "/scratch-card-app/static/css/main.c3b62ad6.css.map",
+    "main.cb686243.js.map": "/scratch-card-app/static/js/main.cb686243.js.map",
+    "787.ea9ae4e3.chunk.js.map": "/scratch-card-app/static/js/787.ea9ae4e3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3b62ad6.css",
+    "static/js/main.cb686243.js"
+  ]
+}
