@@ -35,7 +35,10 @@ const ScratchCardContainer = () => {
   }
 
   useEffect(() => {
-    AOS.init()
+    AOS.init({
+      duration: 1000,
+      once: true
+    })
     setLogoHeight()
     window.addEventListener('resize', setLogoHeight)
     return () => {
@@ -45,10 +48,10 @@ const ScratchCardContainer = () => {
   
   return (
     <div className="container" onDoubleClick={onClickReset}>
-      <div data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000" className="top" style={{ height: height, marginTop: height === 'fit-content' ? -50 : -80 }}>
+      <div data-aos="fade-in" data-aos-delay="300" className="top" style={{ height: height, marginTop: height === 'fit-content' ? -50 : -80 }}>
           <img src={logo} alt=""/>
       </div>
-      <div data-aos="fade-in" data-aos-delay="600" data-aos-duration="1000" className="bottom">
+      <div data-aos="fade-in" data-aos-delay="600" className="bottom">
         <div className="bg">
           <ScratchCard
             width={300}
