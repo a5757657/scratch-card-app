@@ -5,8 +5,6 @@ import img from '.././asset/images/scratch-card/scratch-section.png'
 import benz from '.././asset/images/scratch-card/benz.jpg'
 import logo from '.././asset/images/scratch-card/logo.png'
 import '.././styles/ScratchCardContainer.scss'
-import AOS from 'aos';
-import 'aos/dist/aos.css'
 
 const ScratchCardContainer = () => {
   const ref = useRef(null);
@@ -35,10 +33,6 @@ const ScratchCardContainer = () => {
   }
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true
-    })
     setLogoHeight()
     window.addEventListener('resize', setLogoHeight)
     return () => {
@@ -48,10 +42,10 @@ const ScratchCardContainer = () => {
   
   return (
     <div className="container" onDoubleClick={onClickReset}>
-      <div data-aos="fade-in" data-aos-delay="300" className="top" style={{ height: height, marginTop: height === 'fit-content' ? -50 : -80 }}>
+      <div className="top" style={{ height: height, marginTop: height === 'fit-content' ? -50 : -80 }}>
           <img src={logo} alt=""/>
       </div>
-      <div data-aos="fade-in" data-aos-delay="600" className="bottom">
+      <div className="bottom">
         <div className="bg">
           <ScratchCard
             width={300}

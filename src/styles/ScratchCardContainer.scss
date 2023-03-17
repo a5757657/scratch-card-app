@@ -3,6 +3,10 @@
     @content;
   }
 }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 .container {
   width: 100%;
   height: 100vh;
@@ -17,6 +21,8 @@
     padding: 20px;
     display: flex;
     align-items: flex-end;
+    opacity: 0;
+    animation: fadeIn 1s .3s forwards;
     @include padding {
       padding: 10px;
     }
@@ -28,6 +34,8 @@
   }
   .bottom {
     width: 100%;
+    opacity: 0;
+    animation: fadeIn 1s .6s forwards;
     .bg {
       background-color: #F7E8F2;
       padding: 15px;
