@@ -1,0 +1,61 @@
+@mixin padding{
+  @media(max-width:768px){
+    @content;
+  }
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: url('./../asset/images/scratch-card/background.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .top {
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    @include padding {
+      padding: 10px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .bottom {
+    width: 100%;
+    .bg {
+      background-color: #F7E8F2;
+      padding: 15px;
+      @include padding {
+        padding: 10px;
+      }
+      .ScratchCard__Container {
+        margin: 0 auto;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        canvas {
+          border-radius: 10px;
+        }
+        .ScratchCard__Result {
+          border-radius: 10px;
+          overflow: hidden;
+          margin: 0 auto;
+          width: 98% !important;
+          height: 98% !important;
+        }
+      }
+    }
+    .border {
+      width: 100%;
+      height: 10px;
+      background-color: #7F7BB3;
+    }
+  }
+}
