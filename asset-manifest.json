@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/scratch-card-app/static/css/main.c5654583.css",
-    "main.js": "/scratch-card-app/static/js/main.4117b2d4.js",
+    "main.css": "/scratch-card-app/static/css/main.e723e35b.css",
+    "main.js": "/scratch-card-app/static/js/main.db356c8a.js",
     "static/js/787.ea9ae4e3.chunk.js": "/scratch-card-app/static/js/787.ea9ae4e3.chunk.js",
-    "static/media/logo.png": "/scratch-card-app/static/media/logo.8790c7659664dface8bf.png",
-    "static/media/background.png": "/scratch-card-app/static/media/background.9b40da1217c1d205582e.png",
-    "static/media/benz.jpg": "/scratch-card-app/static/media/benz.d455023a38cb63c7f2a7.jpg",
+    "static/media/logo.jpg": "/scratch-card-app/static/media/logo.adae07be6316f7581145.jpg",
+    "static/media/001.jpeg": "/scratch-card-app/static/media/001.33e238acfd1c49511b92.jpeg",
+    "static/media/scratch-section.jpg": "/scratch-card-app/static/media/scratch-section.dedb0798bb8239ddd102.jpg",
     "index.html": "/scratch-card-app/index.html",
-    "main.c5654583.css.map": "/scratch-card-app/static/css/main.c5654583.css.map",
-    "main.4117b2d4.js.map": "/scratch-card-app/static/js/main.4117b2d4.js.map",
+    "main.e723e35b.css.map": "/scratch-card-app/static/css/main.e723e35b.css.map",
+    "main.db356c8a.js.map": "/scratch-card-app/static/js/main.db356c8a.js.map",
     "787.ea9ae4e3.chunk.js.map": "/scratch-card-app/static/js/787.ea9ae4e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5654583.css",
-    "static/js/main.4117b2d4.js"
+    "static/css/main.e723e35b.css",
+    "static/js/main.db356c8a.js"
   ]
 }
