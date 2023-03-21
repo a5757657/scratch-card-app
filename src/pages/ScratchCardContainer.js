@@ -1,15 +1,16 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useLayoutEffect, useState } from 'react';
 import ScratchCard from 'react-scratchcard-v2';
 import { Fireworks } from '@fireworks-js/react'
-import img from '.././asset/images/scratch-card/scratch-section.png'
-import benz from '.././asset/images/scratch-card/benz.jpg'
-import logo from '.././asset/images/scratch-card/logo.png'
+import logo from '.././asset/images/scratch-card/logo.jpg'
+import scratchSection from '.././asset/images/scratch-card/scratch-section.jpg'
+import benz from '.././asset/images/scratch-card/001.jpeg'
 import '.././styles/ScratchCardContainer.scss'
 
 const ScratchCardContainer = () => {
   const ref = useRef(null);
   const fireworkRef = useRef(null);
-  const [height, setHeight] = useState('fit-content')
+  const [style, setStyle] = useState({ width: 0, height: 0 })
+  const [isSafari, setIsSafari] = useState(false)
 
   const onClickReset = () => {
     ref.current && ref.current.reset();
@@ -23,38 +24,37 @@ const ScratchCardContainer = () => {
       clearTimeout()
     }, 5000);
   }
-
-  const setLogoHeight = () => {
-    if (window.innerWidth > window.innerHeight) {
-      setHeight(window.innerHeight - 130)
-    } else {
-      setHeight('fit-content')
+  
+  useLayoutEffect(() => {
+    const userAgent = window.navigator.userAgent
+    if (
+      !(userAgent.indexOf('CriOS') > -1 || 
+        userAgent.indexOf('FxiOS') > -1 ||
+        userAgent.indexOf('EdgiOS') > -1) && userAgent.indexOf('iPhone') > -1
+    ) {
+      setIsSafari(true)
     }
-  }
-
-  useEffect(() => {
-    setLogoHeight()
-    window.addEventListener('resize', setLogoHeight)
-    return () => {
-      window.removeEventListener('resize', setLogoHeight)
-    }
+    const innerWidth = window.innerWidth > 500 ? 500 : window.innerWidth
+    const height = Math.round(window.innerHeight - (innerWidth * 0.86) - 40)
+    const setHeight = height >= 500 ? 470 : height
+    const width = innerWidth - 30
+    setStyle({ width: width, height: setHeight })
   }, [])
   
   return (
-    <div className="container" onDoubleClick={onClickReset}>
-      <div className="top" style={{ height: height, marginTop: height === 'fit-content' ? -50 : -80 }}>
-          <img src={logo} alt=""/>
-      </div>
+    <div className="container" onDoubleClick={onClickReset} style={{ touchAction: isSafari ? 'none' : 'auto' }}>
+    {/* <h2>{window.navigator.userAgent}</h2> */}
+      <img src={logo} alt="" />
       <div className="bottom">
         <div className="bg">
           <ScratchCard
-            width={300}
-            height={80}
-            finishPercent={50}
-            image={img}
+            width={style.width}
+            height={style.height}
+            finishPercent={60}
+            image={scratchSection}
             ref={ref}
             onComplete={handleFireworkStart}
-            brushSize={20}
+            brushSize={30}
           >
             <img
               alt=''
@@ -76,7 +76,16 @@ const ScratchCardContainer = () => {
         ref={fireworkRef}
         autostart={false}
         options={{
-
+          friction: 0.9,
+          gravity: 0,
+          particles: 200,
+          traceSpeed: 5,
+          lineWidth: {
+            explosion: {
+              min: 1,
+              max: 7
+            },
+          },
         }}
         style={{
           top: 0,

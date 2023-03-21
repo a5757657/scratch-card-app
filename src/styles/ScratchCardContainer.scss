@@ -1,69 +1,64 @@
-@mixin padding{
-  @media(max-width:768px){
-    @content;
-  }
-}
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes fadein {
+  0% { opacity: 0 };
+  100% { opacity: 100; }
 }
 .container {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
-  background: url('./../asset/images/scratch-card/background.png') no-repeat;
-  background-position: center;
-  background-size: cover;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  .top {
-    padding: 20px;
-    display: flex;
-    align-items: flex-end;
+  background-color: #f7e8f2;
+  max-height: -webkit-fill-available;
+  img {
+    max-width: 500px;
+    width: 100%;
+    object-fit: contain;
     opacity: 0;
-    animation: fadeIn 1s .3s forwards;
-    @include padding {
-      padding: 10px;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+    animation: fadein 1s .2s forwards;
   }
   .bottom {
     width: 100%;
-    opacity: 0;
-    animation: fadeIn 1s .6s forwards;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    touch-action: none;
     .bg {
-      background-color: #F7E8F2;
-      padding: 15px;
-      @include padding {
-        padding: 10px;
-      }
+      height: 100%;
+      background-color: #f7e8f2;
+      position: relative;
       .ScratchCard__Container {
-        margin: 0 auto;
+        opacity: 0;
+        animation: fadein 1s .5s forwards;
+        position: absolute !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         border-radius: 10px;
         overflow: hidden;
         display: flex;
-        align-items: center;
         canvas {
           border-radius: 10px;
         }
         .ScratchCard__Result {
+          opacity: 0;
+          animation: fadein 1s .5s forwards;
           border-radius: 10px;
           overflow: hidden;
           margin: 0 auto;
-          width: 98% !important;
-          height: 98% !important;
+          width: 99% !important;
+          height: 97% !important;
         }
       }
     }
     .border {
       width: 100%;
       height: 10px;
-      background-color: #7F7BB3;
+      background-color: #7f7bb3;
     }
   }
 }
